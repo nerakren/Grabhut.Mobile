@@ -1,0 +1,62 @@
+<form id="options_shipping_method">
+    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+        <legend>Shipping Method:</legend>
+        <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="pickup" >
+        <label for="radio-choice-h-2a">Pick Up</label>
+        <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="meetup">
+        <label for="radio-choice-h-2b">Meet Up</label>
+        <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2c" value="deliver">
+        <label for="radio-choice-h-2c">Deliver</label>
+    </fieldset>
+</form>
+<div class="form_pickup hide" id="page_ship_pickup">
+    <div class="ui-field-contain">
+        <label for="select-custom-2">Merchant Branches:</label>
+        <select name="select-custom-2" id="select-custom-2" data-native-menu="false" data-mini="true">
+            <option value="0"></option>
+        </select>
+    </div>
+    <ul data-role="listview" data-inset="true">
+        <li data-role="list-divider">AddressLine</li>
+        <li class="addressline"></li>
+        <li data-role="list-divider">City</li>
+        <li class="locality"></li>
+        <li data-role="list-divider">Country/Region</li>
+        <li class="country"></li>
+        <li data-role="list-divider">Postal Code</li>
+        <li class="postalcode"></li>
+        <li data-role="list-divider">LandMark</li>
+        <li class="landmark"></li>
+    </ul>
+</div>
+<div class="form_meetup hide" id="page_ship_meetup">
+    <label for="meet_where">Where:</label>
+    <input type="text" name="where" id="meet_where">
+    <label for="meet_when">When:</label>
+    <input name="when" id="meet_when" type="text" data-role="date" data-inline="true" readonly>  
+</div>
+<div class="form_delivery hide" id="page_ship_deliver">
+    <label for="ship_place">Shipping Company:</label>
+    <input type="text" name="ship_place" id="ship_company">
+    <label for="ship_date">Expected Date:</label>
+    <input name="ship_date" id="ship_date" type="date" data-role="date" data-inline="true" readonly>    
+    <h3>Customer Address</h3>
+    <ul data-role="listview" data-inset="true">
+        <li data-role="list-divider">AddressLine</li>
+        <li class="addressline"></li>
+        <li data-role="list-divider">City</li>
+        <li class="locality"></li>
+        <li data-role="list-divider">Country/Region</li>
+        <li class="country"></li>
+        <li data-role="list-divider">Postal Code</li>
+        <li class="postalcode"></li>
+        <li data-role="list-divider">LandMark</li>
+        <li class="landmark"></li>
+    </ul>
+</div>
+<form id="applyall_shipmethod">
+    <label>
+        <input type="checkbox" name="checkbox-0 ">Apply to all <strong></strong>
+    </label>
+</form>
+<button id="verify_cartitem" data-ajax="false" data-role="button" class="grabhut_btn ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Confirm and Save</button>

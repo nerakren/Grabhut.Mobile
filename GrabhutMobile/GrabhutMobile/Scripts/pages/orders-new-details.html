@@ -1,0 +1,37 @@
+<ul data-role="listview" data-split-icon="delete" data-inset="false" class="details_order" id="details_new_order">
+    <li data-role="list-divider" class="nodelete">
+        <h2 id="transactionid"></h2>
+    </li>
+    <li data-role="list-divider" id="paymentdata" class="li-detail-head nodelete">
+        <p>Customer name: <span id="customer_name"></span></p>
+        <p>Email: <span id="customer_email"></span></p>
+        <p>Contact: <span id="mobile_number"></span></p>
+        <p>Status: <span id="order_status"></span></p>
+        <p>Order date: <span id="order_date"></span></p>
+        <p>Remarks <span id="remarks"></span></p>
+    </li>
+    <li class="ui-li-has-thumb clone item_clone">
+        <a href="#" class="showshipment">
+            <img src="#" class="ui-li-thumb avatar" />
+            <p><strong class="product_name"></strong></p>
+            <p>Quantity : <span class="quantity"></span></p>
+            <p>Price: <span class="price"></span></p>
+            <p>Shipment : <span class="ship_method"></span></p>
+            <span class="ui-li-count ord_verified isverified">Verified</span>
+        </a>
+        <a href="#order-action" class="removeitem" data-rel="popup" data-position-to="window" data-transition="pop"></a>
+    </li>
+</ul>
+<br />
+<button id="confirm_order" data-ajax="false" data-role="button" class="grabhut_btn ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Confirm Order</button>
+<!--popup-->
+<div data-role="popup" id="order-action">
+    <div data-role="header">
+        <h1>Remove Order</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <h3 class="ui-title">Are you sure you want to remove this cart item?</h3>
+        <a href="orders-new-details.html" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+        <a href="orders-new-details.html" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow" id="remove_cartitem">Remove</a>
+    </div>
+</div>

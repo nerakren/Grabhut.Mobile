@@ -1,0 +1,303 @@
+﻿/*my update*/
+#main .clone {
+  display: none;
+  visibility: hidden;
+}
+#main #app_header_pages,
+#main #app_home_page,
+#main #app_order_page,
+#main #app_product_page {
+  display: none;
+}
+/*datepicker*/
+#app_order_shipment .ui-datepicker .ui-state-active {
+  background-color: #f7931d !important;
+  border-color: #f47920 !important;
+  text-shadow: 0 1px 0 #f37920 !important;
+}
+#app_order_shipment .ui-datepicker td {
+  min-width: 35px !important;
+  height: auto !important;
+}
+/*end datepicker*/
+body {
+  font-family: sans-serif !important;
+}
+.ui-page-theme-a .ui-panel-wrapper {
+  background-color: #fff !important;
+}
+a {
+  text-decoration: none !important;
+}
+.ui-bar-a,
+.ui-page-theme-a .ui-bar-inherit,
+html .ui-bar-a .ui-bar-inherit,
+html .ui-body-a .ui-bar-inherit,
+html body .ui-group-theme-a .ui-bar-inherit {
+  background-color: #f7931d;
+  border-color: #f47920;
+  color: #fff;
+}
+.ui-btn-icon-notext {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none;
+}
+.ui-li-divider {
+  background: #f6f6f6 !important;
+  color: #666 !important;
+  text-shadow: 0 1px 0 #f3f3f3 !important;
+  border-color: #dddddd !important;
+}
+.grabhut-cart {
+  background: #df3107 !important;
+  padding: 5px;
+  border-color: #df5107 !important;
+  -webkit-border-radius: 3em;
+  border-radius: 3em !important;
+  color: #fff !important;
+  text-shadow: none !important;
+}
+.grabhut-cart.ui-btn-icon-left {
+  padding-left: 2.7em;
+}
+.img-menu.ui-navbar a {
+  background: #fff !important;
+}
+.ui-panel-inner ul {
+  margin: 0 1%;
+}
+.ui-panel-inner {
+  border-right: 5px solid #ddd;
+}
+.ui-item-menu a {
+  background: #fff !important;
+}
+.ui-item-menu a:hover {
+  background: #f6f6f6 !important;
+  color: #333 !important;
+  text-shadow: 0 1px 0 #f9f9f9 !important;
+}
+.ui-item-menu a:active {
+  background: #df3107 !important;
+  text-shadow: 0 1px 0 #f9f9f9 !important;
+}
+.ui-item-menu .ui-btn-active {
+  color: #fff !important;
+  background: #df3107 !important;
+}
+li a.ui-btn {
+  background: #fff !important;
+}
+/*.ui-listview .ui-btn{
+background:#fff !important;
+}
+.ui-listview .ui-btn:hover{
+background:#f6f6f6 !important;
+}
+.ui-listview .ui-btn a{
+color:#333;
+text-decoration:none;
+}*/
+.ui-first-child .ui-btn {
+  background: #f6f6f6 !important;
+}
+.admin-grid h2 {
+  color: #555;
+  margin: 5px 0;
+}
+.admin-grid .ui-grid-a .ui-bar {
+  height: 60px;
+}
+.admin-grid p {
+  margin: 2px 0;
+  font-size: 13px;
+  color: #f9f9f9;
+  text-shadow: none;
+}
+.admin-grid a {
+  text-decoration: none;
+}
+.ui-grid-a h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 40px;
+  text-shadow: none;
+}
+.box-content-r {
+  margin: 8px 0 8px 5px;
+}
+.box-content-l {
+  margin: 8px 5px 8px 0;
+}
+.box-content-l .ui-block-a,
+.box-content-r .ui-block-a {
+  padding: 10px;
+}
+.box-content-l .ui-block-b,
+.box-content-r .ui-block-b {
+  padding: 10px;
+  text-align: right;
+}
+.box-footer {
+  padding: 5px 10px;
+}
+.box-footer a {
+  color: #fff !important;
+  text-shadow: none;
+}
+.bg-two {
+  background-color: #49D78B;
+}
+.bg-two .box-footer {
+  background-color: #15AF5C;
+}
+.bg-one {
+  background-color: #FBAF55;
+}
+.bg-one .box-footer {
+  background-color: #F7931D;
+}
+.bg-three {
+  background-color: #4DA1CE;
+}
+.bg-three .box-footer {
+  background-color: #1A6F9D;
+}
+.bg-four {
+  background-color: #FB7A55;
+}
+.bg-four .box-footer {
+  background-color: #F74E1D;
+}
+.admin-pink {
+  background: #F74E1D;
+}
+.admin-green {
+  background: #15AF5C;
+}
+#productdetail {
+  background: #fff !important;
+}
+@media all and (max-width: 35em) {
+  .box-content-r {
+    margin: 8px 0;
+  }
+  .box-content-l {
+    margin: 8px 0;
+  }
+}
+.hidden {
+  display: none !important;
+}
+.hide {
+  display: none;
+}
+#orderlist h3,
+#pagenotification h3 {
+  color: #333;
+}
+.app_order_detail_page ul.ui-listview {
+  margin-bottom: 50px !important;
+}
+.app_order_detail_page .li-detail-head {
+  background: #fff !important;
+  color: #333;
+}
+.app_order_detail_page li a {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+#orderlist.ui-content li a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#orderlist.ui-content li {
+  padding-bottom: 0;
+  background: #fff !important;
+}
+#orderlist.ui-listview > .ui-li-divider {
+  padding-top: 0;
+}
+#orderlist {
+  background: #fff !important;
+}
+#orderlist.ui-content ol p {
+  margin: 5px 0 0;
+}
+#app_order_page .ui-li-count,
+.app_order_detail_page .ui-li-count {
+  background: #f7931d !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #df6107;
+  margin-top: -0.88em;
+  text-indent: 0;
+}
+.details_order .ui-li-count {
+  left: .10em;
+  right: auto;
+  width: 70px;
+  top: 85%;
+}
+.details_order .ui-li-count.ord_verified {
+  background: #f3f3f3 !important;
+  color: #555 !important;
+  text-shadow: 0 1px 0 #f4f4f4;
+}
+#pagenotification li a.product-restock {
+  background: #fcf8f2 !important;
+}
+.img-product {
+  text-align: center;
+}
+#productdetail.ui-grid-a {
+  margin-bottom: 10px;
+  border: 1px solid rgba(221, 221, 221, 0.5);
+  border-bottom: 2px solid rgba(221, 221, 221, 0.8);
+  border-left: none;
+}
+#productdetail .ui-block-b .ui-bar-a {
+  background: #fff !important;
+  border: 1px solid #ddd !important;
+  color: #333;
+  text-shadow: none !important;
+  font-weight: normal;
+}
+#productdetail .ui-block-a .ui-bar-a {
+  background: #f6f6f6 !important;
+  border: 1px solid #ddd !important;
+  color: #333;
+  text-shadow: none !important;
+}
+#productdetail .block-full {
+  width: 100%;
+}
+.btn-edit-product.ui-btn,
+#pageeditproduct .prod-submit.ui-btn,
+#save-restock.ui-btn,
+#app_login_page .ui-btn,
+.grabhut_btn.ui-btn,
+#apply_pickup.ui-btn {
+  margin-top: 20px;
+  background-color: #f7931d !important;
+  border-color: #f47920 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #f47920 !important;
+}
+.btn-edit-product.ui-btn:hover,
+#pageeditproduct .prod-submit.ui-btn:hover,
+#save-restock.ui-btn:hover,
+#app_login_page .ui-btn:hover,
+.grabhut_btn.ui-btn:hover,
+#apply_pickup.ui-btn:hover {
+  background-color: #f57920 !important;
+  border-color: #dddddd !important;
+  color: #333333 !important;
+  text-shadow: 0 1px 0 #999 !important;
+}
+#pageeditproduct .ui-content {
+  background: #fff !important;
+}
+.ui-first-child .ui-btn {
+  background: none repeat scroll 0 0 #f7931d !important;
+}

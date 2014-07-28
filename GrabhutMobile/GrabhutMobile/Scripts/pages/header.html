@@ -1,0 +1,24 @@
+﻿<div class="myHeader" data-role="header" data-position="fixed" data-tap-toggle="false">
+    <div class="ui-btn-left">
+        <a href="#myCatalog" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-nodisc-icon"></a>
+        <a href="#" id="dashrefresh" class="ui-btn ui-btn-inline ui-icon-refresh ui-btn-icon-notext ui-corner-all ui-nodisc-icon"></a>   
+        <a href="#" id="back_btn" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all ui-nodisc-icon hidden"></a>    
+    </div>
+    <span class="ui-title">Grabhut</span>
+    <div class="ui-btn-right">
+        <a href="#" data-ajax="false" data-role="button" class="ui-btn ui-icon-alert ui-btn-icon-left ui-corner-all grabhut-cart">0</a>
+    </div>
+</div>
+<div data-role="panel" id="myCatalog">
+    <div class="ui-panel-inner">
+        <ul data-role="listview" class="ui-listview">
+            <li data-icon="back" class="ui-first-child"><a href="#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-back">Close</a></li>
+            <li class="ui-item-menu"><a href="#" class="ui-btn" data-ajax="false" id="home_header_btn">Home</a></li>
+            <li class="ui-item-menu"><a href="#" class="ui-btn" data-ajax="false" id="order_header_btn">Orders</a></li>
+            <li class="ui-item-menu"><a href="#" class="ui-btn" data-ajax="false" id="inventory_header_btn">Inventory</a></li>
+            <li class="ui-item-menu"><a href="#" class="ui-btn" data-ajax="false" id="restock_header_btn">Products Needing Restock</a></li>
+            <li data-role="list-divider">More</li>
+            <li class="ui-item-menu"><a href="#" data-ajax="false" class="ui-btn" id="logout">Signout</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,170 @@
+<div data-role="page">
+    <div id="app_login_page" style="display:none";>
+        <div class="myHeader" data-role="header" data-position="fixed" data-tap-toggle="false">
+            <span class="ui-title">Grabhut</span>
+        </div>
+        <div data-role="main" class="ui-content">
+            <form>
+                <div>
+                    <h4>Merchandise Empowerment.</h4>
+                    <h5>Enter your merchant account credentials below to log in to your store's administrative backend.</h5>
+                    <label for="un" class="ui-hidden-accessible">Username:</label>
+                    <input type="email" name="email" id="email" value="" placeholder="email" class="ui-input-text ui-body-null ui-shadow-inset">
+                    <label for="pw" class="ui-hidden-accessible">Password:</label>
+                    <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">
+                    <a href="index.html" data-ajax="false" data-role="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="app_header_pages">
+        <div class="myHeader" data-role="header" data-position="fixed" data-tap-toggle="false">
+			<div class="ui-btn-left">
+				<a href="#myCatalog" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-nodisc-icon"></a> 				
+			</div>
+			<span class="ui-title">Grabhut</span>
+			<div class="ui-btn-right">
+				<a href="notifications.html" data-ajax="false" data-role="button" class="ui-btn ui-icon-alert ui-btn-icon-left ui-corner-all grabhut-cart">0</a>
+			</div>			
+		</div>
+        <div data-role="panel" id="myCatalog"> 
+			<div class="ui-panel-inner" >
+				<ul data-role="listview" class="ui-listview">
+					<li data-icon="back" class="ui-first-child"><a href="#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-back">Close</a></li>
+					<li class="ui-item-menu"><a href="../index.html"  class="ui-btn" data-ajax="false">Home</a></li>
+					<li class="ui-item-menu"><a href="orders.html" class="ui-btn" data-ajax="false">Orders</a></li>
+					<li class="ui-item-menu"><a href="inventory.html"  class="ui-btn" data-ajax="false">Inventory</a></li>
+					<li class="ui-item-menu"><a href="restock.html" class="ui-btn" data-ajax="false">Products Needing Restock</a></li>
+					<li data-role="list-divider">More</li>
+					<li class="ui-item-menu"><a href="../login.html" data-ajax="false" class="ui-btn" >Signout</a></li>
+				</ul>
+			</div>	
+		</div> 
+    </div>
+    <div data-role="main" class="ui-content admin-grid" id="app_home_page">
+        <h2>Dashboard</h2>
+        <div class="ui-grid-a ui-responsive">
+            <div class="ui-block-a">
+                <div class="box-content-l bg-one">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <img src="css/images/cart.png" />
+                        </div>
+                        <div class="ui-block-b">
+                            <h1>15</h1>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <a href="pages/orders.html" data-ajax="false">NEW ORDERS</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="box-content-r bg-two">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <img src="css/images/thumb-tack.png" />
+                        </div>
+                        <div class="ui-block-b">
+                            <h1>250</h1>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <a href="#">IN PROGRESS</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-a">
+                <div class="box-content-l bg-three">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <img src="css/images/check-circle.png" />
+                        </div>
+                        <div class="ui-block-b">
+                            <h1>538</h1>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <a href="#">COMPLETED</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="box-content-r bg-four">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <img src="css/images/times-circle.png" />
+                        </div>
+                        <div class="ui-block-b">
+                            <h1>83</h1>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <a href="#">CANCELLED</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-role="main" class="ui-content" id="app_order_page">
+        <form class="ui-filterable" data-inset="false">
+            <input id="orderFilter" placeholder="Search items here..." data-type="search" data-mini="true">
+        </form>
+        <ol data-role="listview" data-split-icon="carat-r" data-inset="false" data-filter="true" data-input="#orderFilter">
+            <li data-role="list-divider">
+                <h3>Today</h3>
+                <div class="ui-li-count">22</div>
+            </li>
+            <li data-icon="false">
+                <a href="orders-detail.html" data-ajax="false">
+                    <strong>TN : <span>1234567</span></strong>
+                    <p>Payment Type : <span>Credit Card</span></p>
+                    <p>Status : <span>New</span></p>
+                    <p>Time : <span>6:14pm</span></p>
+                </a>
+            </li>
+            <li data-icon="false">
+                <a href="orders-detail.html" data-ajax="false">
+                    <strong>TN : <span>12345</span></strong>
+                    <p>Payment Type : <span>Cash</span></p>
+                    <p>Status : <span>In Progress</span></p>
+                    <p>Time : <span>6:14pm</span></p>
+                </a>
+            </li>
+            <li data-icon="false">
+                <a href="orders-detail.html" data-ajax="false">
+                    <strong>TN : <span>330fbd49af134294b7777d0255ce40e6</span></strong>
+                    <p>Payment Type : <span>Credit Card</span></p>
+                    <p>Status : <span class="order-stats">Complete</span></p>
+                    <p>Time : <span>6:14pm</span></p>
+                </a>
+            </li>
+            <li data-role="list-divider">
+                <h3>Yesterday</h3>
+                <div class="ui-li-count">53</div>
+            </li>
+            <li data-icon="false">
+                <a href="orders-detail.html" data-ajax="false">
+                    <strong>TN : <span>330fbd49af134294b7777d0255ce40e6</span></strong>
+                    <p>Payment Type : <span>Credit Card</span></p>
+                    <p>Status : <span>Complete</span></p>
+                    <p>Time : <span>6:14pm</span></p>
+                </a>
+            </li>
+            <li data-role="list-divider">
+                <h3>April 20, 2014</h3>
+                <div class="ui-li-count">1</div>
+            </li>
+            <li data-icon="false">
+                <a href="orders-detail.html" data-ajax="false">
+                    <strong>TN : <span>330fbd49af134294b7777d0255ce40e6</span></strong>
+                    <p>Payment Type : <span>Cash</span></p>
+                    <p>Status : <span>Complete</span></p>
+                    <p>Time : <span>6:14pm</span></p>
+                </a>
+            </li>
+        </ol>
+    </div>
+</div>
+
+

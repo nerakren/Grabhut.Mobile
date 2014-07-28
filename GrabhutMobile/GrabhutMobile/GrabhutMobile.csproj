@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2CF475BB-D245-4FEF-964F-999290B3D53F}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GrabhutMobile</RootNamespace>
+    <AssemblyName>GrabhutMobile</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\css\style.css" />
+    <Content Include="Scripts\css\style.min.css" />
+    <Content Include="Scripts\index.html" />
+    <Content Include="Scripts\js\app.js" />
+    <Content Include="Scripts\js\components\account.js" />
+    <Content Include="Scripts\js\components\cart.js" />
+    <Content Include="Scripts\js\components\categories.js" />
+    <Content Include="Scripts\js\components\device.js" />
+    <Content Include="Scripts\js\components\merchant.js" />
+    <Content Include="Scripts\js\components\orders.js" />
+    <Content Include="Scripts\js\components\product.js" />
+    <Content Include="Scripts\js\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\js\moment.min.js" />
+    <Content Include="Scripts\js\script.js" />
+    <Content Include="Scripts\pages\category.html" />
+    <Content Include="Scripts\pages\header.html" />
+    <Content Include="Scripts\pages\home.html" />
+    <Content Include="Scripts\pages\inventory.html" />
+    <Content Include="Scripts\pages\login.html" />
+    <Content Include="Scripts\pages\orders-cancelled-details.html" />
+    <Content Include="Scripts\pages\orders-completed-details.html" />
+    <Content Include="Scripts\pages\orders-inprog-details.html" />
+    <Content Include="Scripts\pages\orders-new-details.html" />
+    <Content Include="Scripts\pages\orders.html" />
+    <Content Include="Scripts\pages\productlist.html" />
+    <Content Include="Scripts\pages\shipment.html" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\css\bootstrap-theme.css" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\css\bootstrap.css" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\css\bootstrap.min.css" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\js\bootstrap.js" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\js\bootstrap.min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\aes-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\aes.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\cipher-core-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\cipher-core.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\core-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\core.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\enc-base64-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\enc-base64.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\enc-utf16-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\enc-utf16.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\evpkdf-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\evpkdf.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\format-hex-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\format-hex.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\hmac-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\hmac.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\lib-typedarrays-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\lib-typedarrays.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\md5-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\md5.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\mode-cfb-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\mode-cfb.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\mode-ctr-gladman-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\mode-ctr-gladman.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\mode-ctr-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\mode-ctr.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\mode-ecb-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\mode-ecb.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\mode-ofb-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\mode-ofb.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pad-ansix923-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pad-ansix923.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pad-iso10126-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pad-iso10126.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pad-iso97971-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pad-iso97971.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pad-nopadding-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pad-nopadding.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pad-zeropadding-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pad-zeropadding.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pbkdf2-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\pbkdf2.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\rabbit-legacy-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\rabbit-legacy.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\rabbit-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\rabbit.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\rc4-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\rc4.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\ripemd160-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\ripemd160.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha1-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha1.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha224-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha224.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha256-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha256.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha3-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha3.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha384-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha384.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha512-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\sha512.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\tripledes-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\tripledes.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\x64-core-min.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\components\x64-core.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\aes.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\hmac-md5.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\hmac-ripemd160.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\hmac-sha1.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\hmac-sha224.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\hmac-sha256.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\hmac-sha3.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\hmac-sha384.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\hmac-sha512.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\md5.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\pbkdf2.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\rabbit-legacy.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\rabbit.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\rc4.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\ripemd160.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\sha1.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\sha224.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\sha256.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\sha3.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\sha384.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\sha512.js" />
+    <Content Include="Scripts\plugin\CryptoJS v3.1.2\rollups\tripledes.js" />
+    <Content Include="Scripts\plugin\custom\pageloader.js" />
+    <Content Include="Scripts\plugin\jqm-ui-datepicker\css\jquery.mobile.datepicker.css" />
+    <Content Include="Scripts\plugin\jqm-ui-datepicker\css\jquery.mobile.datepicker.theme.css" />
+    <Content Include="Scripts\plugin\jqm-ui-datepicker\js\datepicker.js" />
+    <Content Include="Scripts\plugin\jqm-ui-datepicker\js\jquery.mobile.datepicker.js" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\ajax-loader.gif" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\bullseye.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\cart.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\catalog.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\check-circle.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\action-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\action-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\alert-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\alert-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-d-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-d-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-l-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-l-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-r-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-r-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-u-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\arrow-u-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\audio-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\audio-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\back-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\back-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\bars-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\bars-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\bullets-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\bullets-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\calendar-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\calendar-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\camera-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\camera-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\carat-d-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\carat-d-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\carat-l-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\carat-l-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\carat-r-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\carat-r-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\carat-u-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\carat-u-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\check-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\check-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\clock-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\clock-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\cloud-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\cloud-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\comment-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\comment-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\delete-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\delete-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\edit-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\edit-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\eye-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\eye-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\forbidden-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\forbidden-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\forward-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\forward-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\gear-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\gear-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\grid-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\grid-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\heart-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\heart-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\home-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\home-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\info-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\info-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\location-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\location-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\lock-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\lock-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\mail-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\mail-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\minus-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\minus-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\navigation-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\navigation-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\phone-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\phone-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\plus-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\plus-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\power-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\power-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\recycle-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\recycle-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\refresh-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\refresh-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\search-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\search-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\shop-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\shop-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\star-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\star-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\tag-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\tag-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\user-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\user-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\video-black.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\icons-png\video-white.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\money.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\qrcode.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\scan.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\shopping-cart.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\stack-overflow.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\thumb-tack.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\times-circle.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\images\usd.png" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\jquery.mobile.icons.min.css" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\jquery.mobile.structure-1.4.2.min.css" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\css\orangetheme.min.css" />
+    <Content Include="Scripts\plugin\jqmobile1.4.2\js\jquery.mobile-1.4.2.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Scripts\plugin\jqmobile1.4.2\images\icons-png\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\css\style.less" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\css\bootstrap.css.map" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3950</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2900/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
