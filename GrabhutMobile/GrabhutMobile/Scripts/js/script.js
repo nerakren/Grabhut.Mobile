@@ -10,6 +10,7 @@
             app_header_page = app.dom.main.find('#app_header_page'),
             app_home_page = app.dom.main.find('#app_home_page'),
             app_order_page = app.dom.main.find('#app_order_page'),
+            app_sales_page = app.dom.main.find('#app_sales_page'),
 
             app_neworder_detail_page = app.dom.main.find('#app_neworder_detail_page'),
             app_inprogorder_detail_page = app.dom.main.find('#app_inprogorder_detail_page'),
@@ -18,7 +19,8 @@
 
             app_order_shipment_page = app.dom.main.find('#app_order_shipment'),
             app_product_page = app.dom.main.find('#app_product_page'),
-            app_order_removecart = app.dom.main.find('#order-action')
+            app_order_removecart = app.dom.main.find('#order-action'),
+            app_sales_detail_page = app.dom.main.find('#app_sales_detail_page')
         ;
 
         // Functions
@@ -29,7 +31,9 @@
                 app_order_page.hide();
                 app_order_shipment_page.hide();
                 app_product_page.hide();
+                app_sales_page.hide();
 
+                app_sales_detail_page.hide();
                 app_neworder_detail_page.hide();
                 app_inprogorder_detail_page.hide();
                 app_completedorder_detail_page.hide();
@@ -347,6 +351,39 @@
 
                     });
                 }
+            },
+
+
+
+            loadsales = function () {
+
+                changetitle('Sales');
+                app_header_page.find('#back_btn').hide();
+                app_header_page.find('#dashrefresh').hide();
+                hideinnerpages();
+                app_sales_page.fadeIn('fast');
+
+                app.fn.sales.getsales(function (data) {
+
+                    var ol = app_sales_page.find('ol'),
+                        header_clone = ol.find('.header_clone').clone().removeClass('clone'),
+                        item_clone = ol.find('.item_clone').clone().removeClass('clone'),
+                        
+                        clone = item_clone.clone(),
+						header = header_clone.clone()
+                    ;
+                    
+                        header.find('.ui-li-count').text(data.length);
+                        clone.find('.sales_tid').text(data.TransactionId.toUpperCase());
+                        clone.find('.sales_date').text(moment(data.InvoiceDate).format('LLLL'));
+                        clone.find('.cus_name').text(data.UserName.toUpperCase());
+                        clone.find('.sales_amount').text(data);
+
+                        console.log(data); // eto ung count
+                   
+                    ol.append(clone);
+                        
+                });
             }
 
         ;
@@ -585,6 +622,18 @@
             })
         ;
 
+        //Sales page
+
+        app_sales_page
+            .on('click', 'li', function () {
+
+                var self = $(this);
+                hideinnerpages();
+                app_sales_detail_page.loadpage({ url: 'pages/sales-details.html' }).show();             
+            })
+            
+        ;
+
         // Global events
 
         $('body')
@@ -618,7 +667,6 @@
                 loaddashboard();
             })
             .on('click', '#order_header_btn', function () {
-
                 loadorders('');
             })
             .on('click', '#inventory_header_btn', function () {
@@ -627,11 +675,12 @@
                 hideinnerpages();
                 app_product_page.fadeIn('fast');
                 app_order_page.loadpage({ url: 'pages/inventory.html' }).show();
-
             })
             .on('click', '#restock_header_btn', function () {
-
                 app_header_page.find('#dashrefresh').hide();
+            })
+            .on('click', '#sales_header_btn', function () {
+                loadsales();
             })
             .on('click', '#logout', function () {
 

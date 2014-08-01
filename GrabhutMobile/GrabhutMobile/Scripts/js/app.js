@@ -116,6 +116,9 @@ window.app = (function ($, app) {
         },
         products: function (actionName) {
             return __domainapi + 'Product/' + actionName;
+        },
+        sales: function (actionName) {
+            return __domainapi + 'Sales/' + actionName;
         }
     });
 

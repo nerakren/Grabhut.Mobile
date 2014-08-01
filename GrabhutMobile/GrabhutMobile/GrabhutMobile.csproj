@@ -129,6 +129,7 @@
     <Content Include="Scripts\js\components\merchant.js" />
     <Content Include="Scripts\js\components\orders.js" />
     <Content Include="Scripts\js\components\product.js" />
+    <Content Include="Scripts\js\components\sales.js" />
     <Content Include="Scripts\js\jquery-1.9.1.min.js" />
     <Content Include="Scripts\js\moment.min.js" />
     <Content Include="Scripts\js\script.js" />
@@ -143,6 +144,8 @@
     <Content Include="Scripts\pages\orders-new-details.html" />
     <Content Include="Scripts\pages\orders.html" />
     <Content Include="Scripts\pages\productlist.html" />
+    <Content Include="Scripts\pages\sales-details.html" />
+    <Content Include="Scripts\pages\sales.html" />
     <Content Include="Scripts\pages\shipment.html" />
     <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\css\bootstrap-theme.css" />
     <Content Include="Scripts\plugin\bootstrap-3.1.1-dist\css\bootstrap-theme.min.css" />

@@ -225,6 +225,7 @@ text-decoration:none;
 #orderlist.ui-content ol p {
   margin: 5px 0 0;
 }
+#app_sales_page .ui-li-count,
 #app_order_page .ui-li-count,
 .app_order_detail_page .ui-li-count {
   background: #f7931d !important;
