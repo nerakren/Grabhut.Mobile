@@ -30,8 +30,6 @@
 
         login: function (merchant, devicecode, clientkey, callback) {
 
-            $.holdReady(true);
-
             $.ajax({
 
                 url: app.api.devices('Login'),
@@ -91,8 +89,6 @@
                 // Always call $.holdReady(false); after ajax call
                 // to reactivate jQuery events
 
-                $.holdReady(false);
-
                 // This is how to return a callback
                 if (callback) return callback(response);
             });
@@ -111,6 +107,9 @@
         ------------------------------------------------------------*/
 
         app.fn.devices.login(__cred.Merchant, __cred.DeviceCode, __cred.ClientKey, function (m) {
+
+            app.dom.main.show();
+            app.dom.splash.hide();
 
             console.log('Device Login Successful');
         });

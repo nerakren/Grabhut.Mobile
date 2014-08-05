@@ -20,11 +20,10 @@ window.app = (function ($, app) {
     ------------------------------------------------------------*/
 
     var
-       __domain = 'https://127.0.0.1/',
-       //__domainapi = 'https://grabhutqa.basecamptech.ph/',
+           __domain = 'https://127.0.0.1/',
+           //__domain = 'https://grabhutqa.basecamptech.ph/',
 
-       __domainapi = __domain + 'api/'
-    ;
+           __domainapi = __domain + 'api/'
 
     /*------------------------------------------------------------
         All of these are globally accessible within the app
@@ -148,7 +147,8 @@ window.app = (function ($, app) {
         $.extend(app.dom, {
             body: $('body'),
             document: $(document),
-            main: $('#main')
+            main: $('#main'),
+            splash: $('#splash_screen')
         });
 
         $.extend(app.templates, {
@@ -168,7 +168,7 @@ window.app = (function ($, app) {
         app.dom.document.ajaxError(function (event, jqXHR, ajaxSettings, thrownError) {
 
             // You can improve this part
-            alert("Error: " + thrownError);
+            console.log("Error: " + thrownError);
         });
 
     });

@@ -11,6 +11,7 @@
     $.extend(app.fn.cart, {
 
         gccibt: function (userkey, transactionid, callback) {
+
             app.ajax({
                 url: app.api.cart('gccibt') + '?u=' + userkey + '&t=' + transactionid,
                 type: 'GET'
@@ -22,6 +23,7 @@
         },
 
         gpd: function (userkey, transactionid, callback) {
+
             app.ajax({
                 url: app.api.cart('gpd') + '?u=' + userkey + '&t=' + transactionid,
                 type: 'GET'

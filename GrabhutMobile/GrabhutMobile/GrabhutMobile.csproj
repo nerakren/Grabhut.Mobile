@@ -118,6 +118,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\css\img\avatar.png" />
+    <Content Include="Scripts\css\img\bgscreen.jpg" />
     <Content Include="Scripts\css\style.css" />
     <Content Include="Scripts\css\style.min.css" />
     <Content Include="Scripts\index.html" />

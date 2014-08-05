@@ -11,6 +11,7 @@
     $.extend(app.fn.merchant, {
 
         getaddress: function (callback) {
+
             app.ajax({
                 url: app.api.merchant('GetAddress'),
                 type: 'GET'

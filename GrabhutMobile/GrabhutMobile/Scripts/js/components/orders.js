@@ -11,6 +11,7 @@
     $.extend(app.fn.orders, {
 
         getorder: function (transactionid, callback) {
+
             app.ajax({
                 url: app.api.orders('GetOrder') + '?i=' + transactionid,
                 type: 'GET'
@@ -22,6 +23,7 @@
         },
 
         getorders: function (status, callback) {
+
             app.ajax({
                 url: app.api.orders('GetOrders') + '?status=' + status,
                 type: 'GET'
@@ -33,6 +35,7 @@
         },
 
         getordercounts: function (callback) {
+
             app.ajax({
                 url: app.api.orders('GetOrderCounts'),
                 type: 'GET'
@@ -44,6 +47,7 @@
         },
 
         confirmremove: function (p, r, callback) {
+
             app.ajax({
                 url: app.api.orders('CancelOrderItem?p=') + p + '&r=' + r,
                 type: 'GET'
@@ -53,6 +57,7 @@
         },
 
         completesales: function (i, u, callback) {
+
             app.ajax({
                 url: app.api.orders('CompleteSales?i=') + i + '&u=' + u,
                 type: 'GET'
@@ -62,6 +67,7 @@
         },
 
         confirmorder: function (u, t, callback) {
+
             app.ajax({
                 url: app.api.orders('ConfirmOrder?u=') + u + '&t=' + t,
                 type: 'GET'
@@ -71,6 +77,7 @@
         },
 
         confirmcartitem: function (item, u, origShipMethod, applyToAll, callback) {
+
             app.ajax({
                 url: app.api.orders('ConfirmCartItem?u=') + u + '&origShipMethod=' + origShipMethod + '&applyToAll=' + applyToAll,
                 type: 'POST',
@@ -81,6 +88,7 @@
         },
 
         getaddress: function (p, r, callback) {
+
             app.ajax({
                 url: app.api.orders('GetAddress?p=') + p + '&r=' + r,
                 type: 'GET'

@@ -155,7 +155,7 @@
             },
 
             loaddashboard = function () {
-                
+
                 changetitle('Dashboard');
                 app_header_page.find('#back_btn').hide();
                 app_header_page.find('#dashrefresh').show();
@@ -191,7 +191,7 @@
                 app_neworder_detail_page.loadpage({
                     url: 'pages/orders-new-details.html',
                     callback: function () {
-                        
+
                         app_neworder_detail_page.find('#details_new_order').find('li').not('.clone, .nodelete').remove();
 
                         changetitle('Order details');
@@ -246,7 +246,7 @@
 
                         });
 
-                        
+
 
                         app_neworder_detail_page.find('#confirm_order').data('u', u).data('t', t);
                     }
@@ -353,39 +353,119 @@
                 }
             },
 
+            getallsalesbydate = function (data, year, month, day, callback) {
 
+                var arrays = [];
+                $.each(data, function (i, e) {
 
-            loadsales = function () {
+                    if (e.year == year) arrays.push(e);
+                    if (e.month == month) arrays.push(e);
+                    if (e.day == day) arrays.push(e);
+                });
+
+                if (callback) return callback(arrays);
+            },
+
+            createsalesitems = function (data, itemclone, optionArray) {
+
+                $.each(data, function (i, e) {
+
+                    var clone = itemclone.clone();
+
+                    clone.find('.sales_tid').text(data.TransactionId.toUpperCase());
+                    clone.find('.sales_date').text(moment(data.SalesInvoice.OrderDate).format('LLLL'));
+                    clone.find('.cus_name').text(data.username.toUpperCase());
+
+                    optionArray.push(clone);
+                });
+            },
+
+            loadsales = function (year, month, day) {
+
+                var optionArray = [];
 
                 changetitle('Sales');
                 app_header_page.find('#back_btn').hide();
                 app_header_page.find('#dashrefresh').hide();
                 hideinnerpages();
-                app_sales_page.fadeIn('fast');
 
-                app.fn.sales.getsales(function (data) {
+                app_sales_page.loadpage({
+                    url: 'pages/sales.html',
+                    callback: function () {
 
-                    var ol = app_sales_page.find('ol'),
-                        header_clone = ol.find('.header_clone').clone().removeClass('clone'),
-                        item_clone = ol.find('.item_clone').clone().removeClass('clone'),
-                        
-                        clone = item_clone.clone(),
-						header = header_clone.clone()
-                    ;
-                    
-                        header.find('.ui-li-count').text(data.length);
-                        clone.find('.sales_tid').text(data.TransactionId.toUpperCase());
-                        clone.find('.sales_date').text(moment(data.InvoiceDate).format('LLLL'));
-                        clone.find('.cus_name').text(data.UserName.toUpperCase());
-                        clone.find('.sales_amount').text(data);
+                        app.fn.sales.getsalesbydate(year, month, day, function (invoices) {
 
-                        console.log(data); // eto ung count
-                   
-                    ol.append(clone);
-                        
-                });
+                            var ol = app_sales_page.find('ol'),
+                                header_clone = ol.find('.header_clone').clone().removeClass('clone'),
+                                item_clone = ol.find('.item_clone').clone().removeClass('clone')
+                            ;
+
+                            var header = header_clone.clone();
+
+                            header.find('h3').text('Sales Count');
+                            header.find('.ui-li-count').text(invoices.length);
+
+                            optionArray.push(header);
+
+                            $.each(invoices, function (i, n) {
+
+                                var clone = item_clone.clone();
+
+                                clone.data('invoice', n);
+                                clone.find('.sales_tid').text(n.TransactionId);
+                                clone.find('.cus_name').text(n.UserName);
+                                clone.find('.sales_amount').text(n.NetValue);
+                                clone.find('.sales_date').text(moment(n.InvoiceDate).format('LLLL'));
+
+                                optionArray.push(clone);
+                            });
+                            console.log();
+                            ol.append(optionArray);
+                        });
+                    }
+
+                }).show();
+            },
+
+            loadsalesinvoiceitems = function (invoice) {
+
+                changetitle('Sales Invoice Items');
+                hideinnerpages();
+
+                app_sales_detail_page.loadpage({
+                    url: 'pages/sales-details.html',
+                    callback: function () {
+
+                        app_sales_detail_page.find('#transactionid').text(invoice.TransactionId);
+                        app_sales_detail_page.find('#customer_name').text(invoice.UserName);
+                        app_sales_detail_page.find('#order_status').text(invoice.Status);
+                        app_sales_detail_page.find('#sales_total').text(invoice.NetValue);
+                        app_sales_detail_page.find('#order_date').text(moment(invoice.InvoiceDate).format('LLLL'));
+
+                        app.fn.sales.getinvoiceitems(invoice.TransactionId, function (items) {
+                            var ol = app_sales_detail_page.find('ol'),
+                                item_clone = ol.find('.item_clone').clone().removeClass('clone'),
+                                optionArray = []
+                            ;
+
+                            $.each(items, function (i, n) {
+
+                                var clone = item_clone.clone();
+
+                                clone.find('.product_name').text(n.ProductName);
+                                clone.find('.ship_method').text(n.ShippingMethod);
+                                clone.find('.avatar').prop('src', app.avatars.primary(invoice.Merchant, n.ProductRowKey, 70));
+
+                                optionArray.push(clone);
+
+                            });
+                            
+                            ol.append(optionArray);
+                        });
+                    }
+
+                }).show();
             }
-
         ;
 
         //loading
@@ -416,13 +496,14 @@
                     if (!!m) {
 
                         app_login_page.hide();
-                        app_header_page.find('#back_btn').hide();
+                        
                         app_header_page.loadpage({ url: 'pages/header.html' }).show();
                         app_home_page.loadpage({ url: 'pages/home.html' }).show();
                         changetitle('Dashboard');
-                        
+                        app_login_page.hide();
+                        app_header_page.find('#back_btn').hide();
                         loaddashboard();
-                        
+
                     } else {
 
                         alert('Failed to login');
@@ -436,19 +517,19 @@
         // Home page events
 
         app_home_page
-            .on('click', '#new_order_btn', function () {
+            .on('click', '.bg-one', function () {
                 changetitle('New Orders');
                 loadorders('New');
             })
-            .on('click', '#inprogress_order_btn', function () {
+            .on('click', '.bg-two', function () {
                 changetitle('In progress Orders');
                 loadorders('InProgress');
             })
-            .on('click', '#completed_order_btn', function () {
+            .on('click', '.bg-three', function () {
                 changetitle('Completed Orders');
                 loadorders('Completed');
             })
-            .on('click', '#cancelled_order_btn', function () {
+            .on('click', '.bg-four', function () {
                 changetitle('Cancelled Orders');
                 loadorders('Cancelled');
             })
@@ -495,14 +576,14 @@
 
                             hidepageshipmethod();
                             app_order_shipment_page.find('#page_ship_pickup').fadeIn();
-                            
+
                             loadshipmethodpickup();
-                            
+
 
                         } else if (cartitem.ShippingMethod == 'Meetup') {
 
                             hidepageshipmethod();
-                            
+
                             app_order_shipment_page.find('#page_ship_meetup').fadeIn();
 
                         } else if (cartitem.ShippingMethod == 'Deliver') {
@@ -512,7 +593,7 @@
 
                             loadshipmethoddeliver();
                         }
-                        
+
                         app_order_shipment_page.find('#applyall_shipmethod strong').text(cartitem.ShippingMethod);
                     }
 
@@ -563,7 +644,7 @@
 
             })
         ;
-        
+
         app_order_shipment_page
             .on('change', '#options_shipping_method #radio-choice-h-2a', function () {
 
@@ -574,7 +655,7 @@
 
             })
             .on('change', '#options_shipping_method #radio-choice-h-2b', function () {
-                
+
                 hidepageshipmethod();
                 app_order_shipment_page.find('#page_ship_meetup').fadeIn();
                 $('body').data('shipmethod', 'Meetup');
@@ -596,7 +677,7 @@
                     item = {
                         PartitionKey: cartitem.PartitionKey,
                         RowKey: cartitem.RowKey,
-                        ShippingMethod:  $('body').data('shipmethod'),
+                        ShippingMethod: $('body').data('shipmethod'),
                         ShippingCompany: app_order_shipment_page.find('#page_ship_deliver #ship_company').val(),
                         ShippingExpectedDate: app_order_shipment_page.find('#page_ship_deliver #ship_date').val(),
                         AddressPartitionKey: cartitem.AddressPartitionKey,
@@ -609,15 +690,15 @@
                 app.fn.orders.confirmcartitem(item, $('body').data('userkey'), $('body').data('oldshipmethod'),
                     app_order_shipment_page.find('#applyall_shipmethod input[type="checkbox"]').prop('checked'), function (data) {
 
-                    if (data.Success) {
+                        if (data.Success) {
 
-                        loadorders('New');
-                    } else {
-                        alert(data.Message);
-                    }
+                            loadorders('New');
+                        } else {
+                            alert(data.Message);
+                        }
 
-                    self.prop('disabled', false);
-                });
+                        self.prop('disabled', false);
+                    });
 
             })
         ;
@@ -625,13 +706,12 @@
         //Sales page
 
         app_sales_page
-            .on('click', 'li', function () {
+            .on('click', 'li.item_clone', function () {
 
-                var self = $(this);
-                hideinnerpages();
-                app_sales_detail_page.loadpage({ url: 'pages/sales-details.html' }).show();             
+                loadsalesinvoiceitems($(this).data('invoice'));
+
             })
-            
+
         ;
 
         // Global events
@@ -660,7 +740,7 @@
             .on('click', '#back_btn', function () {
                 loadorders('New');
             })
-            .on('click', '#dashrefresh', function () {               
+            .on('click', '#dashrefresh', function () {
                 loaddashboard();
             })
             .on('click', '#home_header_btn', function () {
@@ -680,7 +760,14 @@
                 app_header_page.find('#dashrefresh').hide();
             })
             .on('click', '#sales_header_btn', function () {
-                loadsales();
+
+                var today = new Date(),
+                    month = today.getMonth() + 1,
+                    day = today.getDate(),
+                    year = today.getFullYear()
+                ;
+
+                loadsales(year, month, day);
             })
             .on('click', '#logout', function () {
 

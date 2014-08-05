@@ -45,11 +45,7 @@
 
         logout: function (callback) {
 
-            $.holdReady(true);
-
             app.credentials = null;
-
-            $.holdReady(false);
             if (callback) return callback("Logout successful!");
         }
     });
